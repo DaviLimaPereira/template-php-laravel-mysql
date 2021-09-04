@@ -1,4 +1,7 @@
 <?php
+use App\Http\Controllers\{
+    PostagemController
+};
 
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/posts/novo',[PostagemController::class, 'create'])->name('posts.create');
+Route::get('/posts',[PostagemController::class, 'index'])->name('posts.index');
 
 Route::get('/', function () {
     return view('welcome');
